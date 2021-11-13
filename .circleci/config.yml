@@ -31,10 +31,10 @@ jobs:
           name: Which bundler?
           command: bundle -v
       - ruby/bundle-install
-      - run: sudo apt install -y postgresql-client || true
-      - run:
-          name: Setup DB
-          command: bundle exec rails db:create db:schema:load --trace
+      # - run: sudo apt install -y postgresql-client || true
+      # - run:
+      #     name: Setup DB
+      #     command: bundle exec rails db:create db:schema:load --trace
       - run:
           name: Run Test Suite
           command: bundle exec rspec -fd
