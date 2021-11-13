@@ -72,6 +72,7 @@ GEM
     crack (0.4.5)
       rexml
     crass (1.0.6)
+    date (3.2.0)
     diff-lcs (1.4.4)
     docile (1.4.0)
     erubi (1.10.0)
@@ -285,6 +286,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
+  date
   factory_bot_rails
   faker
   faraday
