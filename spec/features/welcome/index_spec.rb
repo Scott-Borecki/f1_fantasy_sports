@@ -20,7 +20,6 @@ RSpec.describe 'welcome page', type: :feature do
       it 'displays a link to login' do
         login_text = 'Already registered? Log in'
         login_link_text = 'Log in'
-        save_and_open_page
 
         expect(page).to have_content(login_text)
         expect(page).to have_link(login_link_text)
