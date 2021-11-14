@@ -1,1 +1,7 @@
-<h2>Welcome, <%= @user.first_name %>!</h2>
+<h2>Welcome, <%= @current_user.first_name %>!</h2>
+
+<section id='my-teams'>
+  <h3><%= @current_user.first_name %>'s Teams</h3>
+  <p>You have not created any teams yet.</p>
+  <p><%= link_to 'CREATE TEAM', '#' %></p>
+</section>
