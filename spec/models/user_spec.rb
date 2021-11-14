@@ -25,6 +25,17 @@ RSpec.describe User, type: :model do
         expect(user).to be_valid
       end
     end
-  end
 
+    describe '#user_with_a_team' do
+      subject(:user) { user_with_a_team }
+
+      it 'creates valid objects' do
+        expect(user).to be_valid
+        expect(User.all.size).to eq(1)
+        expect(UserTeam.all.size).to eq(1)
+        expect(UserTeamPlayer.all.size).to eq(6)
+        expect(Player.all.size).to eq(6)
+      end
+    end
+  end
 end

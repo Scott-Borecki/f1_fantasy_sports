@@ -40,7 +40,6 @@ RSpec.describe 'login page', type: :feature do
         end
 
         context 'when I fill in the login form with invalid inputs' do
-
         end
 
         it 'displays a link to register' do

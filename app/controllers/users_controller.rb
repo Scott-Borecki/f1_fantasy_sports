@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     user[:username] = user[:username].downcase
     new_user = User.create!(user)
     session[:user_id] = new_user.id
-    flash[:success] = "Registration successful!"
+    flash[:success] = 'Registration successful!'
     redirect_to dashboard_index_path
   end
 

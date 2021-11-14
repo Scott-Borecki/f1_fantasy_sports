@@ -2,6 +2,23 @@
 
 <section id='my-teams'>
   <h3><%= @current_user.first_name %>'s Teams</h3>
-  <p>You have not created any teams yet.</p>
-  <p><%= link_to 'CREATE TEAM', '#' %></p>
+  <% if @user_teams.empty? %>
+    <p>You have not created any teams yet.</p>
+    <p><%= link_to 'CREATE TEAM', '#' %></p>
+  <% else %>
+    <% @user_teams.each do |user_team| %>
+      <div id='user-team-<%= user_team.id %>'>
+        <h4><%= user_team.name %></h4>
+        <p>
+          Budget Remaining: $<%= user_team.budget_remaining %>m
+        </p>
+        <% user_team.players.each do |player| %>
+          <p id='player-<%= player.id %>'>
+            <%= player.first_name %> <%= player.last_name %> - $<%= player.price %>m
+          </p>
+        <% end %>
+        <p><%= link_to 'EDIT TEAM', '#' %></p>
+      </div>
+    <% end %>
+  <% end %>
 </section>

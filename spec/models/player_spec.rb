@@ -22,5 +22,45 @@ RSpec.describe Player, type: :model do
         expect(player).to be_valid
       end
     end
+
+    describe 'create(:driver)' do
+      subject(:driver) { create(:driver) }
+
+      it 'creates a valid object' do
+        expect(driver).to be_valid
+        expect(driver.is_constructor).to eq(false)
+      end
+    end
+
+    describe 'create(:constructor)' do
+      subject(:constructor) { create(:constructor) }
+
+      it 'creates a valid object' do
+        expect(constructor).to be_valid
+        expect(constructor.is_constructor).to eq(true)
+      end
+    end
+
+    describe 'create(:cheap_driver)' do
+      subject(:cheap_driver) { create(:cheap_driver) }
+
+      it 'creates a valid object' do
+        expect(cheap_driver).to be_valid
+        expect(cheap_driver.is_constructor).to eq(false)
+        expect(cheap_driver.price).to be >= 0.1
+        expect(cheap_driver.price).to be <= 16.3
+      end
+    end
+
+    describe 'create(:cheap_constructor)' do
+      subject(:cheap_constructor) { create(:cheap_constructor) }
+
+      it 'creates a valid object' do
+        expect(cheap_constructor).to be_valid
+        expect(cheap_constructor.is_constructor).to eq(true)
+        expect(cheap_constructor.price).to be >= 0.1
+        expect(cheap_constructor.price).to be <= 16.3
+      end
+    end
   end
 end
