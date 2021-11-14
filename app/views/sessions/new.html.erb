@@ -1,13 +1,18 @@
+<h2>SIGN IN</h2>
+
 <%= form_with url: '/login', method: :post, local: true do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
-
-  <%= form.label :password %>
-  <%= form.text_field :password %>
-
-  <%= form.submit 'SIGN IN' %>
+  <p>
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+  </p>
+  <p>
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </p>
+  <p>
+    <%= form.submit 'SIGN IN' %>
+  </p>
 <% end %>
-
 <p>
   Don't have an account yet? <%= link_to 'Register with F1', register_path  %>
 </p>
