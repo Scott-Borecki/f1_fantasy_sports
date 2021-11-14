@@ -42,6 +42,24 @@ RSpec.describe 'login page', type: :feature do
         context 'when I fill in the login form with invalid inputs' do
 
         end
+
+        it 'displays a link to register' do
+          register_text = "Don't have an account yet? Register with F1"
+          register_link = 'Register with F1'
+
+          expect(page).to have_content(register_text)
+          expect(page).to have_link(register_link)
+        end
+
+        context 'when I click the register link' do
+          let(:register_link) { 'Register with F1' }
+
+          before { click_on register_link }
+
+          it 'redirects me to the register page' do
+            expect(page).to have_current_path(register_path)
+          end
+        end
       end
     end
   end
